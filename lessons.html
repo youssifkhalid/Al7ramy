@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدروس - منصه الغلابه</title>
+    <title>منصه الغلابه😍 - الدروس</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <div class="nav-logo" id="logoBtn">
                 <i class="fas fa-graduation-cap"></i>
                 <span> منصه الغلابه😍</span>
-            </a>
+            </div>
             <div class="nav-actions">
                 <button class="nav-btn whatsapp-btn" id="whatsappBtn" title="تواصل معنا">
                     <i class="fab fa-whatsapp"></i>
                 </button>
+                <div style="position: relative;">
+                    <button class="nav-btn" id="notificationBtn" title="الإشعارات">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="notificationBadge">0</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>الإشعارات</h3>
+                            <button class="clear-btn" id="clearNotifications">مسح الكل</button>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <div class="no-notifications">لا توجد إشعارات جديدة</div>
+                        </div>
+                    </div>
+                </div>
                 <button class="nav-btn" id="themeToggle" title="تبديل الثيم">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -35,13 +50,39 @@
                 <button class="back-btn" id="backToTeachers">
                     <i class="fas fa-arrow-right"></i>
                 </button>
-                <h2 class="page-title" id="lessonsPageTitle">الدروس</h2>
+                <h2 class="page-title" id="lessonsPageTitle">دروس [اسم المدرس]</h2>
             </div>
             <div class="lessons-list" id="lessonsList">
-                </div>
+                 </div>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+     <script src="js/script.js"></script>
+    <script>
+        // إعدادات خاصة بصفحة الدروس
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const teacherName = urlParams.get('teacher');
+            const backUrl = urlParams.get('back'); // لمعرفة المادة للعودة
+            
+            // تحديث زر العودة
+            if (backUrl) {
+                document.getElementById('backToTeachers').onclick = () => {
+                    window.location.href = `teachers.html?subject=${backUrl}`;
+                };
+            } else {
+                document.getElementById('backToTeachers').onclick = () => {
+                    window.location.href = `teachers.html`; // عودة افتراضية
+                };
+            }
+
+            if (teacherName) {
+                // استدعاء دالة عرض الدروس من ملف script.js
+                showLessons(teacherName, backUrl);
+            } else {
+                document.getElementById('lessonsPageTitle').textContent = 'يرجى اختيار مدرس';
+            }
+        });
+    </script>
 </body>
 </html>

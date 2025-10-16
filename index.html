@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصه الغلابه😍</title>
+    <title>منصه الغلابه😍 - المواد</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -11,16 +11,31 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-     <nav class="navbar">
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <div class="nav-logo" id="logoBtn">
                 <i class="fas fa-graduation-cap"></i>
                 <span> منصه الغلابه😍</span>
-            </a>
+            </div>
             <div class="nav-actions">
                 <button class="nav-btn whatsapp-btn" id="whatsappBtn" title="تواصل معنا">
                     <i class="fab fa-whatsapp"></i>
                 </button>
+                <div style="position: relative;">
+                    <button class="nav-btn" id="notificationBtn" title="الإشعارات">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="notificationBadge">0</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>الإشعارات</h3>
+                            <button class="clear-btn" id="clearNotifications">مسح الكل</button>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <div class="no-notifications">لا توجد إشعارات جديدة</div>
+                        </div>
+                    </div>
+                </div>
                 <button class="nav-btn" id="themeToggle" title="تبديل الثيم">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -29,10 +44,10 @@
         </div>
     </nav>
 
-     <div class="page-container active" id="homePage">
+    <div class="page-container active" id="homePage">
         <div class="page-content">
             <div class="hero-section">
-                <h1 class="main-title">المواد الدراسية</h1>
+                <h1 class="main-title">المواد</h1>
                 <p class="subtitle">اختر القسم المناسب لك وابدأ رحلتك التعليمية</p>
             </div>
 
@@ -47,39 +62,113 @@
                 </button>
             </div>
 
-             <div class="subjects-grid active" data-department="science">
-                <a href="teachers.html?subject=arabic" class="subject-card" data-subject="arabic">
-                    <div class="subject-icon"><i class="fas fa-language"></i></div>
+            <div class="subjects-grid active" data-department="science">
+                <a href="teachers.html?subject=arabic" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
                     <h3>اللغة العربية</h3>
                     <p>النحو والأدب والبلاغة</p>
                 </a>
-                <a href="teachers.html?subject=english" class="subject-card" data-subject="english">
-                    <div class="subject-icon"><i class="fas fa-globe"></i></div>
+                <a href="teachers.html?subject=english" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
                     <h3>اللغة الإنجليزية</h3>
                     <p>Grammar & Vocabulary</p>
                 </a>
-                <a href="teachers.html?subject=chemistry" class="subject-card" data-subject="chemistry">
-                    <div class="subject-icon"><i class="fas fa-flask"></i></div>
+                <a href="teachers.html?subject=biology" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>الأحياء</h3>
+                    <p>علم الحياة والكائنات</p>
+                </a>
+                <a href="teachers.html?subject=physics" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>الفيزياء</h3>
+                    <p>علم الطبيعة والحركة</p>
+                </a>
+                <a href="teachers.html?subject=chemistry" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
                     <h3>الكيمياء</h3>
                     <p>علم المادة والتفاعلات</p>
                 </a>
-                </div>
+                <a href="teachers.html?subject=geology" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>الجيولوجيا</h3>
+                    <p>علم الأرض والصخور</p>
+                </a>
+            </div>
 
-             <div class="subjects-grid" data-department="arts">
-                <a href="teachers.html?subject=arabic" class="subject-card" data-subject="arabic">
-                    <div class="subject-icon"><i class="fas fa-language"></i></div>
+            <div class="subjects-grid" data-department="arts">
+                <a href="teachers.html?subject=arabic" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
                     <h3>اللغة العربية</h3>
                     <p>النحو والأدب والبلاغة</p>
                 </a>
-                 <a href="teachers.html?subject=english" class="subject-card" data-subject="english">
-                    <div class="subject-icon"><i class="fas fa-globe"></i></div>
+                <a href="teachers.html?subject=english" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
                     <h3>اللغة الإنجليزية</h3>
                     <p>Grammar & Vocabulary</p>
                 </a>
-                </div>
+                <a href="teachers.html?subject=geography" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>الجغرافيا</h3>
+                    <p>علم الأرض والخرائط</p>
+                </a>
+                <a href="teachers.html?subject=history" class="subject-card">
+                    <div class="subject-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>التاريخ</h3>
+                    <p>الحضارات والأحداث</p>
+                </a>
+            </div>
         </div>
     </div>
 
     <script src="js/script.js"></script>
+    <script>
+        // إعدادات خاصة بالصفحة الرئيسية
+        document.addEventListener('DOMContentLoaded', () => {
+             // إعداد علامات التبويب للأقسام
+            document.querySelectorAll('.tab-btn').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const department = tab.dataset.department;
+                    
+                    document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    document.querySelectorAll('.subjects-grid').forEach(grid => {
+                        grid.classList.remove('active');
+                        if (grid.dataset.department === department) {
+                            grid.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // في حالة التفعيل، يتم عرض أول شبكة مواد بشكل افتراضي
+            document.querySelector('.subjects-grid').classList.add('active');
+        });
+
+        // تم نقل دالة navigateToPage إلى script.js وسيتم استخدامها للتنقل في شريط Navbar
+        document.getElementById('logoBtn').addEventListener('click', () => {
+            window.location.href = 'index.html'; // العودة للصفحة الرئيسية
+        });
+    </script>
 </body>
 </html>
