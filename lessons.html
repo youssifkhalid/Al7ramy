@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدروس - منصه الغلابه</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span> منصه الغلابه😍</span>
+            </a>
+            <div class="nav-actions">
+                <button class="nav-btn whatsapp-btn" id="whatsappBtn" title="تواصل معنا">
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+                <button class="nav-btn" id="themeToggle" title="تبديل الثيم">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff&size=200" alt="User" class="user-avatar">
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container active" id="lessonsPage">
+        <div class="page-content">
+            <div class="page-header">
+                <button class="back-btn" id="backToTeachers">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <h2 class="page-title" id="lessonsPageTitle">الدروس</h2>
+            </div>
+            <div class="lessons-list" id="lessonsList">
+                </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
