@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصه الغلابه😍 - المدرسون</title>
+    <title>منصه الغلابه😍 - االمدرسين</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo" id="logoBtn">
-                <i class="fas fa-graduation-cap"></i>
+                <i class="fas fa-cube"></i> 
                 <span> منصه الغلابه😍</span>
             </div>
-            <div class="nav-actions">
-                <button class="nav-btn whatsapp-btn" id="whatsappBtn" title="تواصل معنا">
+                        <div class="nav-actions">
+               <a href="https://wa.me/201092812463"> <button class="nav-btn whatsapp-btn" id="whatsappBtn" title="تواصل معنا">
                     <i class="fab fa-whatsapp"></i>
+                    </button></a>
+                    
+                <button class="nav-btn download-btn" id="downloadAppBtn" title="تنزيل التطبيق">
+                    <i class="fas fa-download"></i>
                 </button>
-                <div style="position: relative;">
-                    <button class="nav-btn" id="notificationBtn" title="الإشعارات">
-                        <i class="fas fa-bell"></i>
-                        <span class="notification-badge" id="notificationBadge">0</span>
-                    </button>
-                    <div class="notification-dropdown" id="notificationDropdown">
-                        <div class="notification-header">
-                            <h3>الإشعارات</h3>
-                            <button class="clear-btn" id="clearNotifications">مسح الكل</button>
-                        </div>
-                        <div class="notification-list" id="notificationList">
-                            <div class="no-notifications">لا توجد إشعارات جديدة</div>
-                        </div>
-                    </div>
+            
                 </div>
                 <button class="nav-btn" id="themeToggle" title="تبديل الثيم">
                     <i class="fas fa-moon"></i>
                 </button>
-                <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff&size=200" alt="User" class="user-avatar">
-            </div>
+               </div>
         </div>
+    </nav>
     </nav>
 
     <div class="page-container active" id="teachersPage">
@@ -57,19 +48,21 @@
         </div>
     </div>
 
-     <script src="js/script.js"></script>
+     <script src="script.js"></script>
     <script>
-        // إعدادات خاصة بصفحة المدرسين
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const subject = urlParams.get('subject');
 
             if (subject) {
-                // استدعاء دالة عرض المدرسين من ملف script.js
                 showTeachers(subject);
             } else {
                 document.getElementById('teachersPageTitle').textContent = 'يرجى اختيار مادة';
             }
+        });
+
+        document.getElementById('logoBtn').addEventListener('click', () => {
+            window.location.href = 'index.html'; // العودة للصفحة الرئيسية
         });
     </script>
 </body>
